@@ -1,0 +1,80 @@
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &.container-mw-xl {
+    max-width: map-get($container-max-widths, xl);
+  }
+  &.container-mw-lg {
+    max-width: map-get($container-max-widths, lg);
+  }
+  &.container-mw-md {
+    max-width: map-get($container-max-widths, md);
+  }
+  &.container-mw-sm {
+    max-width: map-get($container-max-widths, sm);
+  }
+  &.no-breadcrumb {
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
+}
+
+
+
+
+@keyframes (slideInDown) {
+  0% {
+    transform: translateY(-100%); 
+    visibility: visible; 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+@keyframes (fadeInUp) {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0); 
+  } 
+  100% {
+    opacity: 1; 
+    transform: none; 
+  }    
+}
+@keyframes (fadeInLeft) {
+  0% {
+    opacity: 0; 
+    transform: translate3d(-50%, 0, 0);
+  } 
+  100% {
+    opacity: 1; 
+    transform: none; 
+  }    
+}
+@keyframes (fadeInRight) {
+  0% {opacity: 0; 
+    transform: translate3d(50%, 0, 0);
+  } 
+  100% {
+    opacity: 1; 
+    transform: none; 
+  }
+}
+
+
+.slideInDown { animation-name: slideInDown; }
+.fadeInUp { animation-name: fadeInUp; }
+.fadeInLeft { animation-name: fadeInLeft; }
+.fadeInRight { animation-name: fadeInRight; }
+.animated {
+  animation-duration: .6s;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+.animated.hinge {
+  animation-duration: 2s;
+}
+

@@ -1,0 +1,289 @@
+$theme_dark_text_color:       rgba(255,255,255,.7);
+
+
+/*==========  page  ==========*/
+
+body {
+  background-color: #f5f5f5;
+}
+
+.main-content {
+  overflow: hidden; // fix overflow issue caused by animate.css
+}
+
+.fa {
+  font-weight: 300;
+}
+
+.section-heading-underline {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: $headings-font-weight;
+  &:after {
+    content: "";
+    height: 3px;
+    width: 100px;
+    margin: 0.8em auto 0 auto;
+    display: block;
+    background: #eff0f3;
+  }
+}
+
+.section-heading-underline {
+  margin-bottom: 4rem;
+}
+
+.cover {
+  position: relative;
+  color: rgba($white,.8);
+  background-color: $dark;
+  text-align: center;
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    text-align: left;
+    padding: 8rem 0;
+  }
+
+  .lead {
+    opacity: .7;
+  }
+
+  .img {
+    padding: 10px 0;
+    display: none;
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      display: block;
+      margin-left: -80px;
+      margin-right: -120px;
+    }
+    img {
+      margin: 0 auto -150px;
+      width: 100%;
+      max-width: 1000px;
+    }
+  }
+}
+
+
+.section-testimonials {
+  background-color: $gray-800;
+  padding: 80px 10px 45px;
+  // color: $theme_dark_text_color;
+
+  .carousel {
+    padding-bottom: 80px;
+    max-width: map-get($grid-breakpoints, md);
+    margin: 0 auto;
+  }
+
+  .carousel-indicators li {
+    opacity: .5;
+    &.active {
+      opacity: .7;
+    }
+  }
+
+  .testimonial-v2 {
+    .author-img {
+      background-color: $gray-800;
+    }
+  }
+}
+
+// 
+.section-features {
+  padding: 80px 0 80px;
+  border-bottom: 1px solid #eaeaea;
+
+  header h3 {
+    text-transform: uppercase;
+  }
+
+  .icon-box {
+    margin-top: 40px;
+    .ibox-icon .fa {
+      font-size: 38px;
+      line-height: 48px;
+    }
+  }
+}
+
+.feature-callouts {
+  border-bottom: 1px solid rgba(0,0,0,.035);
+}
+
+.section-newsletter {
+  position: relative;
+  background-color: $dark_bg;
+  padding: 6rem 0;
+  text-align: center;
+  // color: ;
+  // text-shadow: 1px 1px 2px rgba(0,0,0,.15);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba($white, .1);
+  }
+
+  > div {
+    position: relative;
+    z-index: 2;
+  }
+  h2 {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: $font-weight-200;
+  }
+
+  form {
+    padding: 0 15px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .ui-input-group {
+    > input,
+    > textarea {
+      border-radius: 0;
+      border-bottom: 1px solid;
+      color: rgba($body-color, 0.65);
+    }
+    > label {
+      // color: $body-color;
+    }
+  }
+}
+
+.ui-input-group {
+  position: relative; 
+  margin: 18px 0 12px;
+
+  .form-control {
+    background-color: transparent;
+    box-shadow: none;
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  > input,
+  > textarea {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    border-bottom: 1px solid rgba($black,.15);
+    &:focus { outline:none; }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -20px;
+      left: 0;
+      font-size: 12px;
+    }
+    &:valid ~ label {
+      color: #999;
+    }
+    &:focus ~ label {
+      color: $primary;
+    }
+
+    // active state
+    &:focus ~ .input-bar:before,
+    &:focus ~ .input-bar:after {
+      width: 50%;
+    }
+  }
+  > label {
+    color: $gray-600; 
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: all .35s $material_animation;
+  }
+  .input-bar { 
+    position: relative; 
+    display: block; 
+    width: 100%;
+  }
+  .input-bar:before,
+  .input-bar:after {
+    content: '';
+    height: 1px; 
+    width: 0;
+    bottom: 1px; 
+    position: absolute;
+    background: $primary; 
+    transition: all .35s $material_animation;
+  }
+  .input-bar:before {
+    left: 50%;
+  }
+  .input-bar:after {
+    right: 50%; 
+  }
+}
+
+
+.section-faq {
+  background-color: $bg_section_faq;
+  padding: 7em 2em 5em;
+
+  > header {
+    margin-bottom: 4rem;
+  }
+
+  ul.faq-list {
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    margin-bottom: 1.6em;
+    padding: 1em 1em;
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      padding: 1em 3em;
+    }
+    @media (min-width: 47.5em) {
+      width: 49%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  h4 {
+    margin-bottom: .6em;
+    font-size: 21px;
+    line-height: 1.6em;
+  }
+
+  .faq-a {
+    font-size: 1rem;
+    opacity: .8;
+  }
+}
+
+
+.section-cta {
+  padding: 4em 1em;
+  background-color: $primary;
+  color: $white;
+
+  .cta-lead {
+    letter-spacing: 1px;
+  }
+}
+
+// 
+.footer {
+  position: relative;
+  color: #7a859e;
+  position: relative;
+  background-color: $dark_bg;
+  padding: 30px 0;
+  font-size: 12px;
+}

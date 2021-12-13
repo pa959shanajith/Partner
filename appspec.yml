@@ -1,0 +1,29 @@
+version: 0.0
+os: windows
+files:
+  - source: build/
+    destination: /var/www/partner/html/
+hooks:
+  ApplicationStop:
+    - location: commands/stop_server.sh
+      timeout: 300
+      runas: root
+
+  BeforeInstall:
+    - location: commands/before_install.sh
+      timeout: 300
+      runas: root
+  
+  AfterInstall:
+    - location: commands/after_install.sh
+      timeout: 300
+      runas: root
+
+  ApplicationStart:
+    - location: commands/start_server.sh
+      timeout: 300
+      runas: root
+
+  ValidateService:
+    - location: commands/validate_service.sh
+      timeout: 300
